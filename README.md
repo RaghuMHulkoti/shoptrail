@@ -63,6 +63,18 @@ flowchart LR
 
 Every API is live and can be tried from its Swagger UI. The services run on Render's free tier, so the first request after a quiet period can take about a minute while the service wakes up. Each service has its own README with setup, configuration, endpoints, tables, events and known gaps.
 
+## Test consoles
+
+> **For testing only.** These pages were built to exercise the backend APIs end to end from a browser: sign-up and sign-in, the full checkout saga with test payments, and seller onboarding. They are not the product's frontend. **A dedicated frontend has not been built yet**; ShopTrail is a backend project.
+
+| Console | URL | Used to test |
+|---|---|---|
+| Accounts | https://user-service-xy69.onrender.com/console.html | Sign-up, email verification, sign-in and refresh, profile, addresses, payment methods, consent, password reset, admin role management |
+| Orders | https://order-service-nf43.onrender.com/console.html | Catalogue, cart, placing an order, Stripe and Razorpay test payments, live saga timeline |
+| Sellers | https://supplier-service-tha0.onrender.com/supplier.html | Supplier, warehouses, products, offers and stock upload (requires a `SUPPLIER`, `OPS` or `ADMIN` account) |
+
+Each console is plain HTML, CSS and JavaScript served by its own service, and calls the live APIs directly. Payments run in test mode only (Stripe `pm_card_visa`; Razorpay card `4100 2800 0000 1007`, expiry `12/26`, CVV `123`). No real money moves.
+
 ## Checkout saga
 
 The order service orchestrates checkout across inventory and payment with Kafka events, a transactional outbox, idempotent consumers and dead-letter topics. Every failure path has a compensation: stock is released, payment is retried, or the customer is refunded.
