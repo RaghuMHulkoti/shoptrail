@@ -172,3 +172,7 @@ shoptrail/
 ├── inventory-service/        submodule → inventory-manager
 └── supplier-service/         submodule → supplier-service
 ```
+
+## License
+
+Copyright (c) 2026 Raghavendra. All rights reserved. The code is published for viewing only; copying or reuse requires written permission. See [LICENSE](LICENSE).
