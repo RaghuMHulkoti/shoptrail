@@ -118,6 +118,17 @@ sequenceDiagram
     U->>U: email "Order ... confirmed" via Brevo
 ```
 
+## Observability
+
+Every service exposes Micrometer metrics at `/actuator/prometheus`. Grafana Alloy scrapes the live services and ships the metrics to Grafana Cloud.
+
+| View | Link | Shows |
+|---|---|---|
+| Platform dashboard | [E-Commerce Microservices: Full Platform](https://sunnylinden3537.grafana.net/d/ecommerce-microservices/e-commerce-microservices-full-platform?from=now-7d&to=now&timezone=browser&var-datasource=grafanacloud-prom&var-application=$__all&var-instance=$__all&refresh=30s) | 135 panels: services up, request rate, 4xx/5xx errors, p50/p95/p99 latency, slowest and busiest endpoints, JVM heap and GC, DB connection pools, business flow |
+| Grafana Cloud observability | [sunnylinden3537.grafana.net/observability](https://sunnylinden3537.grafana.net/observability) | Service overview in Grafana Cloud |
+
+> The Grafana stack is private, so these links ask for a Grafana sign-in. Access is available on request.
+
 ## Engineering highlights
 
 - **Distributed transactions:** orchestrated saga with compensation for payment failures, timeouts and stock lost after payment.
