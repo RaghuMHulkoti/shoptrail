@@ -1,0 +1,21 @@
+[submodule "user-service"]
+	path = user-service
+	url = https://github.com/RaghuMHulkoti/user_service.git
+[submodule "order-service"]
+	path = order-service
+	url = https://github.com/RaghuMHulkoti/order_service.git
+[submodule "payment-service"]
+	path = payment-service
+	url = https://github.com/RaghuMHulkoti/payment_service.git
+[submodule "cart-service"]
+	path = cart-service
+	url = https://github.com/RaghuMHulkoti/cart_service.git
+[submodule "product-service"]
+	path = product-service
+	url = https://github.com/RaghuMHulkoti/product_service.git
+[submodule "inventory-service"]
+	path = inventory-service
+	url = https://github.com/RaghuMHulkoti/inventory-manager.git
+[submodule "supplier-service"]
+	path = supplier-service
+	url = https://github.com/RaghuMHulkoti/supplier-service.git
